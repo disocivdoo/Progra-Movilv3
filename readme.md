@@ -1,10 +1,5 @@
 # **<span style="color: darkblue; font: verdana;">Angry-Dinosaurs</span>**
 
-### Desarrollado por el profesor Cristián Gómez Vega
-### Correo Triskeledu: cgomezvega@triskeledu.cl
-### Correo DUOC: cri.gomezv@profesor.duoc.cl
-### www.triskeledu.cl
-
 # Preparando mi celular y mi aplicación
 ## Preparando mi celular 
 
