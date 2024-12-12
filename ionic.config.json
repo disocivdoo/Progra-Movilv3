@@ -1,0 +1,7 @@
+{
+  "name": "Asistify",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}

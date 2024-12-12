@@ -1,0 +1,62 @@
+.page-container {
+  padding: 20px;
+}
+
+.users-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.user-card {
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+ion-card-header {
+  background: var(--ion-color-primary);
+  color: white;
+  border-radius: 10px 10px 0 0;
+}
+
+ion-card-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: white;
+}
+
+ion-card-subtitle {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+ion-list {
+  background: transparent;
+}
+
+ion-item {
+  --background: transparent;
+}
+
+.action-buttons {
+  display: flex;
+  justify-content: flex-end;
+  padding: 10px;
+}
+
+ion-button {
+  --padding-start: 10px;
+  --padding-end: 10px;
+}
+
+.fullscreen-image {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+  filter: blur(5px);
+}

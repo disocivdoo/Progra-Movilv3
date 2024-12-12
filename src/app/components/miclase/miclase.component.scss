@@ -1,0 +1,157 @@
+.page-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.header-section {
+  text-align: center;
+  margin-bottom: 30px;
+  animation: fadeInDown 0.5s ease-out;
+
+  h1 {
+    color: var(--ion-color-primary);
+    font-size: 2.5em;
+    margin-bottom: 8px;
+    font-weight: bold;
+  }
+
+  .subtitle {
+    color: var(--ion-color-medium);
+    font-size: 1.1em;
+    margin: 0;
+  }
+}
+
+.info-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  animation: fadeInUp 0.5s ease-out;
+}
+
+.info-card {
+  background: var(--ion-card-background);
+  border-radius: 16px;
+  padding: 20px;
+  margin: 0;
+  display: flex;
+  align-items: flex-start;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid rgba(var(--ion-color-primary-rgb), 0.1);
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  }
+
+  .card-icon {
+    background: var(--ion-color-primary);
+    border-radius: 12px;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 16px;
+    flex-shrink: 0;
+
+    ion-icon {
+      font-size: 24px;
+      color: white;
+      --ionicon-stroke-width: 48px;
+    }
+  }
+
+  .card-content {
+    flex: 1;
+
+    h3 {
+      color: var(--ion-text-color);
+      font-size: 1.1em;
+      margin: 0 0 8px 0;
+      font-weight: 600;
+    }
+
+    p {
+      color: var(--ion-color-primary);
+      font-size: 1.2em;
+      margin: 0 0 4px 0;
+      font-weight: 500;
+    }
+
+    small {
+      color: var(--ion-color-medium);
+      font-size: 0.9em;
+    }
+
+    .schedule-details {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      color: var(--ion-color-medium);
+      font-size: 0.9em;
+      margin-top: 4px;
+    }
+  }
+}
+
+.no-data-message {
+  text-align: center;
+  margin-top: 40px;
+  padding: 20px;
+  background: rgba(var(--ion-color-primary-rgb), 0.1);
+  border-radius: 12px;
+  animation: fadeIn 0.5s ease-out;
+
+  p {
+    color: var(--ion-text-color);
+    margin: 8px 0;
+    font-size: 1.1em;
+
+    &:first-child {
+      font-weight: bold;
+    }
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .info-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .header-section h1 {
+    font-size: 2em;
+  }
+}

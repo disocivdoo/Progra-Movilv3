@@ -1,0 +1,93 @@
+<ion-content>
+  <div class="page-container">
+    <!-- Header Section -->
+    <div class="header-section">
+      <h1>Foro de Discusión</h1>
+      <p class="subtitle">Comparte tus ideas y experiencias</p>
+    </div>
+
+    <!-- Create/Edit Post Form -->
+    <ion-card class="form-card">
+      <ion-card-header>
+        <ion-card-title>{{ post.id ? 'Editar Publicación' : 'Nueva Publicación' }}</ion-card-title>
+        <ion-card-subtitle>{{ selectedPostText }}</ion-card-subtitle>
+      </ion-card-header>
+
+      <ion-card-content>
+        <ion-item lines="none" class="custom-item">
+          <ion-input 
+            [(ngModel)]="post.title" 
+            placeholder="Título de la publicación" 
+            class="title-input"
+            label="Título"
+            labelPlacement="floating">
+          </ion-input>
+        </ion-item>
+        
+        <ion-item lines="none" class="custom-item">
+          <ion-textarea 
+            [(ngModel)]="post.body" 
+            placeholder="¿Qué quieres compartir?" 
+            rows="4"
+            class="content-textarea"
+            label="Contenido"
+            labelPlacement="floating">
+          </ion-textarea>
+        </ion-item>
+
+        <div class="action-buttons">
+          <ion-button fill="outline" (click)="cleanPost()">
+            <ion-icon slot="start" name="refresh-outline"></ion-icon>
+            Limpiar
+          </ion-button>
+          <ion-button (click)="savePost()">
+            <ion-icon slot="start" name="{{ post.id ? 'save-outline' : 'add-outline' }}"></ion-icon>
+            {{ post.id ? 'Actualizar' : 'Publicar' }}
+          </ion-button>
+        </div>
+      </ion-card-content>
+    </ion-card>
+
+    <!-- Posts List -->
+    <div class="posts-section">
+      <h2>Publicaciones Recientes</h2>
+      
+      <div class="posts-container">
+        <ion-card *ngFor="let post of posts; trackBy: getPostId" class="post-card">
+          <ion-card-header>
+            <div class="post-header">
+              <div class="author-info">
+                <ion-avatar>
+              <img [src]="getProfileImage()" alt="Profile">
+            </ion-avatar>
+                <div class="author-details">
+                  <ion-card-subtitle class="post-meta">
+                    <span class="author-name">{{ post.author }}</span>
+                    <span class="post-id">#{{ post.id }}</span>
+                  </ion-card-subtitle>
+                  <ion-card-title class="post-title">{{ post.title }}</ion-card-title>
+                </div>
+              </div>
+              
+              <div class="post-actions">
+                <ion-button fill="clear" (click)="editPost(post)">
+                  <ion-icon slot="icon-only" name="pencil-outline"></ion-icon>
+                </ion-button>
+                <ion-button fill="clear" color="danger" (click)="deletePost(post)">
+                  <ion-icon slot="icon-only" name="trash-outline"></ion-icon>
+                </ion-button>
+              </div>
+            </div>
+          </ion-card-header>
+
+          <ion-card-content>
+            <p class="post-content">{{ post.body }}</p>
+            <div class="post-footer">
+              <span class="post-date">{{ post.date || 'Hace un momento' }}</span>
+            </div>
+          </ion-card-content>
+        </ion-card>
+      </div>
+    </div>
+  </div>
+</ion-content>

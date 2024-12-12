@@ -1,0 +1,67 @@
+<ion-content class="ion-padding">
+  <div class="page-container">
+    <!-- Header Section -->
+    <div class="header-section">
+      <h1>Mi Clase</h1>
+      <p class="subtitle">Información de la asignatura actual</p>
+    </div>
+
+    <!-- Class Info Cards -->
+    <div class="info-cards">
+      <!-- Location Card -->
+      <ion-card class="info-card">
+        <div class="card-icon">
+          <ion-icon name="location"></ion-icon>
+        </div>
+        <div class="card-content">
+          <h3>Ubicación</h3>
+          <p>{{ sede || 'No disponible' }}</p>
+        </div>
+      </ion-card>
+
+      <!-- Course Card -->
+      <ion-card class="info-card">
+        <div class="card-icon">
+          <ion-icon name="book"></ion-icon>
+        </div>
+        <div class="card-content">
+          <h3>Asignatura</h3>
+          <p>{{ nombreAsignatura || 'No disponible' }}</p>
+          <small>Sección {{ seccion || '-' }} | ID: {{ idAsignatura || '-' }}</small>
+        </div>
+      </ion-card>
+
+      <!-- Teacher Card -->
+      <ion-card class="info-card">
+        <div class="card-icon">
+          <ion-icon name="person"></ion-icon>
+        </div>
+        <div class="card-content">
+          <h3>Profesor</h3>
+          <p>{{ nombreProfesor || 'No disponible' }}</p>
+        </div>
+      </ion-card>
+
+      <!-- Schedule Card -->
+      <ion-card class="info-card">
+        <div class="card-icon">
+          <ion-icon name="time"></ion-icon>
+        </div>
+        <div class="card-content">
+          <h3>Horario</h3>
+          <p>{{ dia || 'No disponible' }}</p>
+          <div class="schedule-details">
+            <span>Bloque {{ bloqueInicio || '-' }} - {{ bloqueTermino || '-' }}</span>
+            <span>{{ horaInicio || '--:--' }} - {{ horaFin || '--:--' }}</span>
+          </div>
+        </div>
+      </ion-card>
+    </div>
+
+    <!-- Mensaje cuando no hay datos -->
+    <div *ngIf="!hayDatos()" class="no-data-message">
+      <p>No hay datos de clase disponibles.</p>
+      <p>Por favor, escanee un código QR desde la página principal.</p>
+    </div>
+  </div>
+</ion-content>
