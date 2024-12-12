@@ -1,4 +1,4 @@
-# **<span style="color: darkblue; font: verdana;">Angry-Dinosaurs</span>**
+# **<span style="color: darkblue; font: verdana;">Asistify</span>**
 
 # Preparando mi celular y mi aplicación
 ## Preparando mi celular 
